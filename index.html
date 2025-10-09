@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta name="theme-color" content="#0b54a0" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smart360 - Виртуальные туры по Абхазии</title>
@@ -17,62 +16,11 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@smart360_abkhazia" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  
-    <style>
-      .skip-link {
-        position: absolute;
-        left: -999px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-      .skip-link:focus {
-        position: static;
-        left: 0;
-        width: auto;
-        height: auto;
-        padding: 8px 12px;
-        background: #ffffff;
-        color: #0b54a0;
-        z-index: 9999;
-        border-radius: 4px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      }
-    </style>
-
-  
-    <!-- Google Analytics 4 (replace GA_MEASUREMENT_ID with your ID) -->
-    <!--
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
-    -->
-
-    <!-- Yandex Metrika (replace COUNTER_ID) -->
-    <!--
-    <script type="text/javascript" >
-      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-      m[i].l=1*new Date();
-      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-      ym(COUNTER_ID, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/COUNTER_ID" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    -->
-    
   </head>
 
   <body>
-    <a href="#main" class="skip-link">Перейти к содержимому</a>
     <div id="root"></div>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <!-- TODO: Insert Google Analytics / other analytics snippet here (Project Manager / Analyst) -->
-
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>

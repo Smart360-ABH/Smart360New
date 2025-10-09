@@ -3,12 +3,8 @@ import { Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import VirtualTourFrame from '@/components/VirtualTourFrame';
 import { Button } from '@/components/ui/button';
-import { useEffect, useState } from 'react';
-import { sendEvent } from '@/lib/analytics';
 
 const Index = () => {
-  const [abVariant, setAbVariant] = useState<string>(() => { try { return localStorage.getItem('abVariant') || (Math.random() < 0.5 ? 'A' : 'B'); } catch(e){ return Math.random() < 0.5 ? 'A' : 'B' } });
-  useEffect(() => { try { localStorage.setItem('abVariant', abVariant); sendEvent('AB_Expose', { variant: abVariant }); } catch(e){} }, [abVariant]);
   return (
     <Layout>
       {/* Hero Section */}
@@ -22,23 +18,17 @@ const Index = () => {
               <p className="text-xl mb-6">
                 Лучшее решение для продвижения вашего бизнеса в Абхазии. Создаём иммерсивные виртуальные туры для организаций по доступной цене.
               </p>
-              <div className="flex flex-wrap gap-4">{/* A/B CTA variants */}
-                {abVariant === "A" ? (
-                  <Button asChild size="lg" className="bg-white text-blue-700 hover:bg-blue-50 shadow-lg" aria-label="Посмотреть портфолио виртуальных туров">
-                    <Link to="/portfolio" onClick={() => sendEvent("CTA_Click", { variant: abVariant })}>Посмотреть работы</Link>
-                  </Button>
-                ) : (
-                  <Button asChild size="lg" className="bg-blue-600 text-white hover:bg-blue-700 shadow-lg" aria-label="Запустить демо-тур">
-                    <Link to="/portfolio" onClick={() => sendEvent("CTA_Click", { variant: abVariant })}>Запустить демо-тур</Link>
-                  </Button>
-                )}
-                <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10" aria-label="Связаться со Smart360">
-                  <Link to="/contact" onClick={() => sendEvent("ContactClick", { method: "link", label: "contact_page" })}>Связаться с нами</Link>
+              <div className="flex flex-wrap gap-4">
+                <Button asChild size="lg" className="bg-white text-blue-700 hover:bg-blue-50">
+                  <Link to="/portfolio">Посмотреть работы</Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                  <Link to="/contact">Связаться с нами</Link>
                 </Button>
               </div>
             </div>
             <div className="rounded-lg overflow-hidden shadow-xl">
-              <VirtualTourFrame poster="/placeholder.svg" lazy={true}
+              <VirtualTourFrame
                 src="https://yandex.com/map-widget/v1/?l=stv%2Csta&ll=41.057345%2C42.982470&mode=search&oid=194863417396&ol=biz&panorama%5Bdirection%5D=66.838510%2C3.861791&panorama%5Bfull%5D=true&panorama%5Bpoint%5D=41.056935%2C42.983444&panorama%5Bspan%5D=110.729797%2C60.000000&z=16.68"
                 title="Сухумская бухта"
                 height={400}
@@ -74,7 +64,7 @@ const Index = () => {
                 src="https://www.youtube.com/embed/XYljglml2UQ?si=eap5K1gnyWiu8U7g"
                 title="YouTube video player"
                 frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
                 className="rounded-lg shadow-lg"
@@ -138,10 +128,10 @@ const Index = () => {
             Свяжитесь с нами сегодня, чтобы обсудить ваш проект и получить бесплатную консультацию.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg" className="bg-white text-blue-700 hover:bg-blue-50 shadow-lg" aria-label="Посмотреть портфолио виртуальных туров">
+            <Button asChild size="lg" className="bg-white text-blue-700 hover:bg-blue-50">
               <Link to="/contact">Связаться с нами</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10" aria-label="Связаться со Smart360">
+            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
               <a href="tel:+79409435555">Позвонить</a>
             </Button>
           </div>

@@ -35,7 +35,7 @@ const Portfolio = () => {
                 Сухум — столица Республики Абхазия, город с древней историей, расположенный на побережье Черного моря. Виртуальный тур позволяет увидеть знаменитую Сухумскую бухту и набережную.
               </p>
               <div className="bg-gray-100 p-4 rounded-lg mb-6">
-                <VirtualTourFrame poster="/placeholder.svg" lazy={true}
+                <VirtualTourFrame
                   src="https://yandex.com/map-widget/v1/?l=stv%2Csta&ll=41.057345%2C42.982470&mode=search&oid=194863417396&ol=biz&panorama%5Bdirection%5D=66.838510%2C3.861791&panorama%5Bfull%5D=true&panorama%5Bpoint%5D=41.056935%2C42.983444&panorama%5Bspan%5D=110.729797%2C60.000000&z=16.68"
                   title="Сухумская бухта"
                   height={500}
@@ -66,7 +66,7 @@ const Portfolio = () => {
                     width="560" 
                     height="500" 
                     frameBorder="1" 
-                    allowFullScreen={true} loading="lazy" 
+                    allowFullScreen={true} 
                     style={{position:"relative", width: "100%"}}
                   ></iframe>
                 </div>
@@ -96,7 +96,7 @@ const Portfolio = () => {
                     width="560" 
                     height="500" 
                     frameBorder="1" 
-                    allowFullScreen={true} loading="lazy" 
+                    allowFullScreen={true} 
                     style={{position:"relative", width: "100%"}}
                   ></iframe>
                 </div>
@@ -120,7 +120,7 @@ const Portfolio = () => {
                 Новый Афон — город, известный своими историческими и природными достопримечательностями, включая знаменитый Новоафонский монастырь и уникальную пещеру.
               </p>
               <div className="bg-gray-100 p-4 rounded-lg mb-6">
-                <VirtualTourFrame poster="/placeholder.svg" lazy={true}
+                <VirtualTourFrame
                   src="https://yandex.com/map-widget/v1/?l=stv%2Csta&ll=40.812787%2C43.098081&panorama%5Bdirection%5D=44.595733%2C5.419071&panorama%5Bfull%5D=true&panorama%5Bpoint%5D=40.812038%2C43.097903&panorama%5Bspan%5D=113.507965%2C60.000000&z=17"
                   title="Новоафонский монастырь"
                   height={500}

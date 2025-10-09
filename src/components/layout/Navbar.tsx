@@ -1,4 +1,3 @@
-import { sendEvent } from '@/lib/analytics';
 
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
@@ -16,7 +15,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header role="banner" className="bg-white shadow-sm sticky top-0 z-50">
+    <header className="bg-white shadow-sm sticky top-0 z-50">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8" aria-label="Global">
         <div className="flex items-center">
           <Link to="/" className="-m-1.5 p-1.5">
@@ -70,7 +69,7 @@ const Navbar = () => {
         </div>
         <div className="hidden lg:flex">
           <a
-            href="tel:+79409435555" onClick={() => sendEvent("ContactClick", { method: "call", label: "+7 940 943-55-55" })}
+            href="tel:+79409435555"
             className="text-sm font-medium text-gray-700 hover:text-blue-600 flex items-center"
           >
             <svg 
@@ -88,15 +87,6 @@ const Navbar = () => {
             </svg>
             +7 940 943-55-55
           </a>
-            <a
-              href="https://wa.me/79409435555" onClick={() => sendEvent("ContactClick", { method: "whatsapp", label: "+7 940 943-55-55" })}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Связаться в WhatsApp"
-              className="block rounded-md px-3 py-2 text-base font-medium text-green-600 hover:bg-gray-50 hover:text-green-700"
-            >
-              WhatsApp
-            </a>
         </div>
       </nav>
 
@@ -120,20 +110,10 @@ const Navbar = () => {
               </Link>
             ))}
             <a
-              href="tel:+79409435555" onClick={() => sendEvent("ContactClick", { method: "call", label: "+7 940 943-55-55" })}
-              aria-label="Позвонить Smart360"
+              href="tel:+79409435555"
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-600"
             >
               +7 940 943-55-55
-            </a>
-            <a
-              href="https://wa.me/79409435555" onClick={() => sendEvent("ContactClick", { method: "whatsapp", label: "+7 940 943-55-55" })}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Связаться в WhatsApp"
-              className="block rounded-md px-3 py-2 text-base font-medium text-green-600 hover:bg-gray-50 hover:text-green-700"
-            >
-              WhatsApp
             </a>
           </div>
         </div>

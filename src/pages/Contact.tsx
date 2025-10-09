@@ -188,7 +188,7 @@ const Contact = () => {
                 <Button 
                   type="submit" 
                   disabled={isSubmitting} 
-                  loading="lazy" className="w-full"
+                  className="w-full"
                 >
                   {isSubmitting ? 'Отправка...' : 'Отправить сообщение'}
                 </Button>

@@ -14,17 +14,11 @@ const TourCard = ({ title, description, imageUrl, tourUrl }: TourCardProps) => {
   return (
     <Card className="overflow-hidden">
       <div className="h-48 overflow-hidden">
-        <picture>
-          <source type="image/avif" srcSet={imageUrl ? imageUrl.replace(/\.(jpg|png|jpeg)$|$/, '.avif') : undefined} />
-          <source type="image/webp" srcSet={imageUrl ? imageUrl.replace(/\.(jpg|png|jpeg)$|$/, '.webp') : undefined} />
-          <img
-            src={imageUrl}
-            alt={title}
-            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-            loading="lazy"
-            decoding="async"
-            />
-        </picture>
+        <img 
+          src={imageUrl} 
+          alt={title} 
+          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+        />
       </div>
       <CardHeader>
         <CardTitle>{title}</CardTitle>
